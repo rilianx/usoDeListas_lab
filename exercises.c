@@ -43,12 +43,6 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
-   int *dato;
-   for(int i = 1; i <= 10; i++) {
-      dato = (int*)malloc(sizeof(int));
-      *dato = i;
-      pushBack(L, dato);
-   }
    return L;
 }
 
@@ -58,14 +52,7 @@ Crea una función que reciba una lista de enteros (int*) y
 retorne la suma de sus elementos.
 */
 int sumaLista(List *L) {
-   int *dato;
-   int suma = 0;
-   dato = (int*)first(L);
-   while(dato != NULL) {
-      suma += *dato;
-      dato = (int*)next(L);
-   }
-   return suma;
+   return 0;
 }
 
 /*
@@ -78,15 +65,7 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-   int *dato;
-   dato = (int*)first(L);
-   while(dato != NULL) {
-      if(*dato == elem){
-         popCurrent(L);
-         //break;
-      }
-      dato = (int*)next(L);
-   }
+
 }
 
 /*
@@ -97,15 +76,6 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
-   Stack* Paux = create_stack();
-   void *dato;
-   while((dato = pop(P1)) != NULL) {
-      push(Paux, dato);
-   }
-   while((dato = pop(Paux)) != NULL) {
-      push(P1, dato);
-      push(P2, dato);
-   }
 }
 
 /*
@@ -116,50 +86,6 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   Stack* S = create_stack();
-   char *dato;
-   int balanceados = 1;
-   dato = cadena;
-   while(*dato != '\0' && balanceados) {
-      if(*dato == '(') {
-         push(S, dato);
-      } else if(*dato == ')') {
-         if(top(S) == NULL || *(char*)top(S) != '('){
-            balanceados = 0;
-            break;
-         } else {
-            pop(S);
-         }
-      }
-
-      if(*dato == '{') {
-         push(S, dato);
-      } else if(*dato == '}') {
-         if(top(S) == NULL || *(char*)top(S) != '{'){
-            balanceados = 0;
-            break;
-         } else {
-            pop(S);
-         }
-      }
-
-      if(*dato == '[') {
-         push(S, dato);
-      } else if(*dato == ']') {
-         if(top(S) == NULL || *(char*)top(S) != '['){
-            balanceados = 0;
-            break;
-         } else {
-            pop(S);
-         }
-      }
-      
-      dato++;
-   }
-
-   if(top(S) != NULL) 
-      balanceados = 0;
-   
-   return balanceados;
+   return 0;
 }
 
