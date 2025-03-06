@@ -7,10 +7,10 @@ Ejercicios sobre el uso de Listas y Pilas
 ---
 **Antes de comenzar**
 
-* Importe el repositorio desde su cuenta en repl.it (si no tiene siga [este tutorial](https://chartreuse-goal-d5c.notion.site/C-mo-comenzar-con-los-labs-b4dd8c7abc5a425d8f25e2eaa060e5b5?pvs=4))
+* Importe el repositorio usando Visual Stucio Code (revise [este tutorial](https://chartreuse-goal-d5c.notion.site/C-mo-comenzar-con-los-labs-b4dd8c7abc5a425d8f25e2eaa060e5b5?pvs=4))
 * Sólo puede modificar el archivo `exercises.c` 
-* Para testear sus códigos debe abrir un terminal (shell) y ejecutar el comando `./test.sh`
-* Verifique que sus cambios se hayan subido a este repositorio
+* Para testear sus códigos debe abrir un terminal **Git Bash** y ejecutar el comando `./test.sh`
+* Verifique que sus cambios se hayan subido a su repositorio GitHub (actualice esta página)
 * **No está permitido usar comandos de git** (a menos que el profesor o ayudantes lo indiquen)
 ---
 
@@ -68,3 +68,19 @@ Retorna 1 si están balanceados, 0 en caso contrario.
 > **Paréntesis balanceados** se refiere a una secuencia en la que cada tipo de paréntesis abierto (ya sean paréntesis redondos `()`, corchetes `[]`, o llaves `{}`) se cierra en el orden inverso al que se abrió. Esto asegura que todas las aperturas tienen su correspondiente cierre en el orden correcto. 
   Por ejemplo, la secuencia `([{}])` está balanceada porque cada paréntesis que se abre se cierra adecuadamente en reversa a su orden de apertura. 
   En contraste, `([)]` es un ejemplo de paréntesis desbalanceados, ya que aunque todos los tipos de paréntesis se abren y cierran, el orden no es el correcto: el corchete se cierra antes de cerrar el paréntesis que lo contiene inicialmente.
+
+Si no se te ocurre como hacerlo puedes implementar este algoritmo:
+
+1. Utiliza una pila para seguir la pista de los paréntesis de apertura que encuentras mientras recorres la cadena.
+2. Cuando encuentres un paréntesis de apertura (como '(', '[', o '{'), agrégalo a la pila.
+3. Si encuentras un paréntesis de cierre (como ')', ']', o '}'):
+   
+   a. Verifica si la pila está vacía.
+   
+   b. Si no está vacía, compara el paréntesis de cierre con el último paréntesis de apertura en la pila.
+   
+   c. Si coinciden, retira el último paréntesis de apertura de la pila.
+
+    d. Si no coinciden o la pila está vacía, la cadena no está balanceada.
+
+4. Al final de la cadena, si la pila está vacía, la cadena está balanceada. Si la pila no está vacía, no está balanceada.
